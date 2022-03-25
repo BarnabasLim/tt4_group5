@@ -47,11 +47,12 @@ const db=getFirestore(app);
  */
  export const db_createAccount = async(credentials, onSuccess, onError) => {
   try {
-      console.log(credentials.uid);
-      const docRef=doc(db,"users",credentials.uid)
+      console.log("users/" + credentials.uid);
+      const docRef=doc(db,"users/" + credentials.uid );
       await setDoc(docRef,{
-          ...credentials,
-          id:credentials.uid
+          name:credentials.displayName,
+          email:credentials.email,
+          id:credentials.uid,
       }, { merge: true })
       return onSuccess();
   } catch (error) {

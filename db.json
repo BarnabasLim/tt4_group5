@@ -1,0 +1,48 @@
+
+{
+  "customers" : [
+
+    {
+      "id": 1,
+      "customer_name": "Farrah Dobbie",
+      "customer_phone": "3688961901",
+      "customer_address": "49862 Kingsford Junction",
+      "balance": 69687.54
+    },
+    {
+      "id": 2,
+      "customer_name": "Malcolm Orbell",
+      "customer_phone": "8867727382",
+      "customer_address": "385 Lawn Terrace",
+      "balance": 55592.51
+    },
+    {
+      "id": 3,
+      "customer_name": "Filippa Bucknill",
+      "customer_phone": "6677805329",
+      "customer_address": "1898 Michigan Road",
+      "balance": 53826.01
+    }
+  ],
+  "loans" : [
+    {
+        "id": 1,
+        "customerid": 2,
+        "loan_amount": 135532.99
+      },
+      {
+        "id": 2,
+        "customerid": 1,
+        "loan_amount": 34367.53
+      },
+      {
+        "id": 3,
+        "customerid": 8,
+        "loan_amount": 45086.74
+      }
+    ]
+
+}
+
+
+

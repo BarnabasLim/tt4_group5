@@ -3,10 +3,10 @@ import { useSpring, animated } from 'react-spring';
 import styled from 'styled-components';
 import { MdClose } from 'react-icons/md';
 
-import * as v9_auth from '../../src/api/v9_auth';
+import * as v9_auth from '../api/v9_auth';
 
 
-const Modal = (props) => {
+const Modal2 = (props) => {
 
   //Modal Code
   const showModal=props.showModal
@@ -46,7 +46,7 @@ const Modal = (props) => {
   );
 
   // const VerifyAccount=(customerCred)=>{
-  //   const customerCred = { customer_name: '', password:'' };
+  //   //const customerCred = { customer_name: '', password:'' };
   //   axios.post('http://localhost:3001/checkLogin', customerCred)
   //       .then(customer => setCustomer(customer));
   // }
@@ -322,7 +322,7 @@ v9_auth.signInUser(account,
                   }
                   {(signedIn==false && create==false )&&
                     (
-                    <div style={{ backgroundColor:  "", alignItems:'center'}}>
+                    <div style={{ backgroundColor:  '', alignItems:'center'}}>
                       <div>
                         <button
                           onClick={()=>{SignInAccount(email,password)}}
@@ -430,4 +430,4 @@ const CloseModalButton = styled(MdClose)`
   padding: 0;
   z-index: 10;
 `;
-export default Modal
+export default Modal2
