@@ -18,10 +18,18 @@ module.exports = {
     },
     getAccountBalByCustomerId:async function(id){
         const customerCol = firestore.collection(db, 'customersTest');
-        const q = firestore.query(customerCol, firestore.where("CustomerId","==",id));
+        const q = firestore.query(customerCol, firestore.where("CustomerId","==",Number(id)));
         const customerSnapshot = await firestore.getDocs(q);
-        // const customerList = customerSnapshot.docs.map(doc => doc.data());
-        console.log(customerSnapshot.docs);
-        return customerSnapshot.docs;
+        const customerList = customerSnapshot.docs.map(doc => doc.data());
+        return customerList;
+    },
+    getLoanById:async function(id){
+        // const docRef = firestore.doc(db, "loanTest", id);
+        const loanCol = firestore.collection(db, 'loanTest');
+        const q = firestore.query(loanCol, firestore.where("LoanId","==",Number(id)));
+        // const loanSnapshot = await firestore.getDocs(docRef);
+        const loanSnapshot = await firestore.getDocs(q);
+        const loanList = loanSnapshot.docs.map(doc => doc.data());
+        return loanList;
     }
 }
