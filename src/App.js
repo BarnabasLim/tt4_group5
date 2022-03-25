@@ -13,7 +13,7 @@ import Navbar from './components/Navbar2/components/Navbar';
 //import Navbar from './components/Navbar';
 import Services from './screens/ServicesScreen/Services';
 import Products from './screens/ProductsScreen/Products';
-import LoanPayment from './screens/ContactUsScreen/LoansPayment';
+import LoanPayment from './screens/LoanPaymentScreen/LoansPayment';
 import SignUp from './screens/SignUpScreen/SignUp';
 import Marketing from './screens/MarketingScreen/Marketing';
 import Consulting from './screens/ConsultingScreen/Consulting';
@@ -326,7 +326,7 @@ const SignInAccount=(email,password)=>{
           {/* <Route path='/' exact component={Home} /> */}
           <Route path='/services' element={<Services/>} />
           <Route path='/products' element={<Products/>} />
-          <Route path='/contact-us' element={<LoanPayment/>} />
+          <Route path='/loan-payment/' element={<LoanPayment/>} />
           <Route path='/sign-up' element={<SignUp/>} />
           <Route path='/marketing' element={<Marketing/>} />
           <Route path='/consulting' element={<Consulting/>} />
