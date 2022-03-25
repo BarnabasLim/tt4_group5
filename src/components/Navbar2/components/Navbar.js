@@ -72,7 +72,7 @@ function Navbar() {
               className='nav-links'
               onClick={closeMobileMenu}
             >
-              Contact Us
+              Loans Payment
             </Link>
           </li>
           <li>

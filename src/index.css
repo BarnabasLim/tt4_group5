@@ -20,6 +20,19 @@ body {
   border-radius: 5px;
 }
 
+.container-card {
+  max-width: 500px;
+  margin: 30px auto;
+  overflow: auto;
+  min-height: auto;
+  border: 1px solid steelblue;
+  padding: 30px;
+  border-radius: 5px;
+}
+.loan-container{
+  margin:20px;
+  border-bottom: 1px solid grey
+}
 .header {
   display: flex;
   justify-content: space-between;
