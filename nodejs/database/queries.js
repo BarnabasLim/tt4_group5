@@ -18,10 +18,10 @@ module.exports = {
     },
     getAccountBalByCustomerId:async function(id){
         const customerCol = firestore.collection(db, 'customersTest');
-        const q = firestore.query(customerCol, firestore.where("customerid","==",id));
+        const q = firestore.query(customerCol, firestore.where("CustomerId","==",id));
         const customerSnapshot = await firestore.getDocs(q);
         // const customerList = customerSnapshot.docs.map(doc => doc.data());
-        console.log(customerSnapshot.docs.data());
-        return customerSnapshot.docs.data();
+        console.log(customerSnapshot.docs);
+        return customerSnapshot.docs;
     }
 }
