@@ -608,7 +608,7 @@ const SignInAccount=(email,password)=>{
         }
         </div> */}
 
-        
+        <Footer/>
       </div>
     </Router>
   );
