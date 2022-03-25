@@ -11,7 +11,8 @@ import { getFirestore,
     query,where, 
     orderBy, serverTimestamp,
     getDoc,
-    updateDoc
+    updateDoc,
+    setDoc,
 
 } from "firebase/firestore";//service name
 
@@ -33,7 +34,35 @@ const firebaseConfig=config.firebaseConfig()
 const app = initializeApp(firebaseConfig);
 //init services
 const auth = getAuth(app);
-//New ##########################################################################
+const db=getFirestore(app);
+
+//Barnabas
+/**
+ * This method creates the account and stores the information in Firestore.
+ * 
+ * @param {Object} credentials   An object containing crucial information to be stored.
+ * @param {Function} onSuccess   A function triggered upon success.
+ * @param {Function} onError     A function triggered upon error.
+ * @returns 
+ */
+ export const db_createAccount = async(credentials, onSuccess, onError) => {
+  try {
+      console.log(credentials.uid);
+      const docRef=doc(db,"users",credentials.uid)
+      await setDoc(docRef,{
+          ...credentials,
+          id:credentials.uid
+      }, { merge: true })
+      return onSuccess();
+  } catch (error) {
+      return onError(error);
+  }
+}
+
+
+
+
+//New Auth ##########################################################################
 //#############################################################################
 
 

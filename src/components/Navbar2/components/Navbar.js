@@ -4,13 +4,16 @@ import { Link } from 'react-router-dom';
 import './Navbar.css';
 import Dropdown from './Dropdown';
 
-function Navbar() {
+function Navbar(props) {
   const [click, setClick] = useState(false);
   const [dropdown, setDropdown] = useState(false);
+
+  
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
 
+  const setShowModal=props.setShowModal;
   const onMouseEnter = () => {
     if (window.innerWidth < 960) {
       setDropdown(false);
@@ -70,7 +73,10 @@ function Navbar() {
             <Link
               to='/contact-us'
               className='nav-links'
-              onClick={closeMobileMenu}
+              onClick={()=>{
+                closeMobileMenu()
+                console.log("clicked")
+              }}
             >
               Loans Payment
             </Link>
@@ -79,9 +85,13 @@ function Navbar() {
             <Link
               to='/sign-up'
               className='nav-links-mobile'
-              onClick={closeMobileMenu}
+              onClick={()=>{
+                closeMobileMenu()
+                setShowModal()
+                console.log("clicked")
+              }}
             >
-              Sign Up
+              Sign Up Here
             </Link>
           </li>
           <li>
@@ -94,7 +104,11 @@ function Navbar() {
             </Link>
           </li>
         </ul>
-        <Button />
+        <Button 
+          setShowModal={setShowModal} 
+        
+        
+        />
       </nav>
     </>
   );
