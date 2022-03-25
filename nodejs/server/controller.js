@@ -12,28 +12,20 @@ module.exports = {
     },
 
     checkLogin:async function(req, res){
-        try{
-            let id = req.body.customerName;
-            let pwd = req.body.password;
-            let customer = await queries.checkLogin(customerName,pwd);
-            res.json(
-                customer
-            );
-        }catch(error){
-            res.status(400);
-        }
+        let customerName = req.body.customerName;
+        let pwd = req.body.password;
+        let customer = await queries.checkLogin(customerName,pwd);
+        res.json(
+            customer
+        )
     },
 
     getAccountBalByCustomerId:async function(req, res){
-        try{
-            let id = req.query.id;
-            console.log(id);
-            let customer = await queries.getAccountBalByCustomerId(id);
-            res.json(
-                customer
-            );
-        }catch(error){
-            res.status(400);
-        }
+        let id = req.query.id;
+        console.log(id);
+        let customer = await queries.getAccountBalByCustomerId(id);
+        res.json(
+            customer
+        )
     }
 }

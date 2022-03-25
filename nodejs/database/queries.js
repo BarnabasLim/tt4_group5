@@ -11,7 +11,7 @@ module.exports = {
     },
     checkLogin:async function(customerName,pwd){
         const customerCol = firestore.collection(db, 'customersTest');
-        const q = firestore.query(customerCol, firestore.where("customer_name","==",customerName),where("password","==",pwd));
+        const q = firestore.query(customerCol, firestore.where("customer_name","==",customerName),firestore.where("password","==",pwd));
         const customerSnapshot = await firestore.getDocs(q);
         const customerList = customerSnapshot.docs.map(doc => doc.data());
         return customerList;
@@ -21,7 +21,7 @@ module.exports = {
         const q = firestore.query(customerCol, firestore.where("customerid","==",id));
         const customerSnapshot = await firestore.getDocs(q);
         // const customerList = customerSnapshot.docs.map(doc => doc.data());
-        console.log(doc.data());
-        return doc.data();
+        console.log(customerSnapshot.docs.data());
+        return customerSnapshot.docs.data();
     }
 }
