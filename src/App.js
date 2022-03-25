@@ -54,7 +54,7 @@ function App() {
 
   // const [books, setBooks]=useState([])
 
-
+  
   //Sign up
   //Extract Data
   const [email, setEmail]=useState('barn@outlook.com')
@@ -274,8 +274,17 @@ const SignInAccount=(email,password)=>{
             openModal()}}
         /> */}
         
-        <Modal showModal={showModal} setShowModal={setShowModal} />
-        <Navbar />
+        <Modal showModal={showModal} setShowModal={setShowModal}
+          signedIn={signedIn}
+          setSignedIn={setSignedIn}
+          user={user}
+          setUser={setUser}
+        
+        />
+        <Navbar setShowModal={()=>{
+            console.log("clicked")
+            openModal()}}
+        />
         <Routes>
           <Route path='/' element={
             <>
