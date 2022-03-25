@@ -8,7 +8,7 @@ import * as v9_auth from '../../api/v9_auth';
 
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
-
+import  Modal  from '../../AppComponents/Modal';
 const Random = () => {
   const [showModal, setShowModal] = useState(false);
   const openModal = () => {
@@ -117,6 +117,7 @@ const nameFun='Brad2'
             console.log("clicked")
             openModal()}}
         />
+        <Modal showModal={showModal} setShowModal={setShowModal} />
         <Footer/>
         <input 
           type="text" 
