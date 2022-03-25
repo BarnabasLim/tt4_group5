@@ -164,6 +164,7 @@ let account={
 v9_auth.createAccount(account,
   (user)=>{
    console.log(user)
+   setSignedIn(true)
    v9_auth.db_createAccount(user, ()=>{console.log("successfull")},(e)=>{console.log(e,"creation fail")})
 //    Authentication.createAccount(
 //     { name: username, email, password },
