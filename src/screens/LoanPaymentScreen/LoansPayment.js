@@ -86,8 +86,8 @@ const LoansPayment = () => {
   
   
     function handleSubmit(e){
-      let newBalance = balance-value
-      let newLoanAmt =  loan_amt -value
+      let newBalances = balance-value
+      let newLoanAmts =  loan_amt -value
       e.preventDefault();
       // console.log(newBalance)
       setLoans(
