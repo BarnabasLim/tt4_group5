@@ -11,11 +11,11 @@ module.exports = {
         });
     },
 
-    getCustomerById:async function(req, res){
+    checkLogin:async function(req, res){
         try{
-            let id = req.body.customerid
-            let pwd = req.body.password
-            let customer = await queries.getCustomerById(id,pwd);
+            let id = req.body.customerName;
+            let pwd = req.body.password;
+            let customer = await queries.checkLogin(customerName,pwd);
             res.json(
                 customer
             );
@@ -26,7 +26,8 @@ module.exports = {
 
     getAccountBalByCustomerId:async function(req, res){
         try{
-            let id = req.query.id
+            let id = req.query.id;
+            console.log(id);
             let customer = await queries.getAccountBalByCustomerId(id);
             res.json(
                 customer

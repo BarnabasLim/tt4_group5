@@ -9,20 +9,19 @@ module.exports = {
         const customersList = customersSnapshot.docs.map(doc => doc.data());
         return customersList;
     },
-    getCustomerById:async function(id,pwd){
+    checkLogin:async function(customerName,pwd){
         const customerCol = firestore.collection(db, 'customersTest');
-        const q = firestore.query(customerCol, firestore.where("customerid","==",id),where("password","==",pwd));
+        const q = firestore.query(customerCol, firestore.where("customer_name","==",customerName),where("password","==",pwd));
         const customerSnapshot = await firestore.getDocs(q);
         const customerList = customerSnapshot.docs.map(doc => doc.data());
         return customerList;
+    },
+    getAccountBalByCustomerId:async function(id){
+        const customerCol = firestore.collection(db, 'customersTest');
+        const q = firestore.query(customerCol, firestore.where("customerid","==",id));
+        const customerSnapshot = await firestore.getDocs(q);
+        // const customerList = customerSnapshot.docs.map(doc => doc.data());
+        console.log(doc.data());
+        return doc.data();
     }
-    // ,
-    // getAccountBalByCustomerId:async function(id){
-    //     const customerCol = firestore.collection(db, 'customers');
-    //     const q = firestore.query(customerCol, firestore.where("customerid","==",id));
-    //     const customerSnapshot = await firestore.getDocs(q);
-    //     // const customerList = customerSnapshot.docs.map(doc => doc.data());
-    //     console.log(doc.data());
-    //     return doc.data();
-    // }
 }

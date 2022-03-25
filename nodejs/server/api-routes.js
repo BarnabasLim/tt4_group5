@@ -12,10 +12,10 @@ var controller = require('./controller');
 
 router.route('/getAllCustomers')
     .get(controller.getAllCustomers);
-router.route('/getCustomerById')
-    .post(controller.getCustomerById);
-// router.route('/getAccountBalByCustomerId')
-//     .get(controller.getAccountBalByCustomerId);
+router.route('/checkLogin')
+    .post(controller.checkLogin);
+router.route('/getAccountBalByCustomerId')
+    .get(controller.getAccountBalByCustomerId);
 
 // Export API routes
 module.exports = router;
