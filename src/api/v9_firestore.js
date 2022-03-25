@@ -11,7 +11,8 @@ import { getFirestore,
     query,where, 
     orderBy, serverTimestamp,
     getDoc,
-    updateDoc
+    updateDoc,
+    setDoc,
 
 } from "firebase/firestore";//service name
 
@@ -22,6 +23,132 @@ const firebaseConfig=config.firebaseConfig()
 const app = initializeApp(firebaseConfig);
 //init services
 const db = getFirestore(app);
+
+/**
+ * This method add Cutomers from Firestore.
+ * @param {object} cutomer
+ * @param {function} onSuccess 
+ * @param {function} onError 
+ */
+ export const db_addPaymenttoLoans = async (PaymenttoLoans,onSuccess,onError) => {
+
+    try {
+        // collection ref
+
+        // PaymentId: 1,
+        // LoanId: 1,
+        // payment_date: "2022-02-20",
+        // payment_amount: 35532.99
+
+        //const colRef=collection(db,'customers')
+        const docRef=doc(db, "loanTest/"+PaymenttoLoans.LoanId+"/PaymentTest/"+PaymenttoLoans.PaymentId)
+        await setDoc(docRef,{
+            PaymentId: PaymenttoLoans.PaymentId,
+            LoanId: PaymenttoLoans.LoanId,
+            payment_date: PaymenttoLoans.payment_date,
+            payment_amount: PaymenttoLoans.payment_amount,
+        })
+
+
+        // console.log(customer)
+        // onSuccess(customer)
+        onSuccess()
+    } catch (e) {
+        onError(e)
+        console.error("Error adding document: ", e);
+    }
+
+}
+
+
+/**
+ * This method add Cutomers from Firestore.
+ * @param {object} cutomer
+ * @param {function} onSuccess 
+ * @param {function} onError 
+ */
+ export const db_addLoanToCutomers = async (LoantoCustomer,onSuccess,onError) => {
+
+    try {
+        // collection ref
+
+        // CustomerLoanId: 1,
+        // CustomerId: 7,
+        // LoanId: 6
+        //const colRef=collection(db,'customers')
+        const docRef=doc(db, "customersTest/"+LoantoCustomer.CustomerId+"/loanTest/"+LoantoCustomer.LoanId)
+        await setDoc(docRef,{
+            LoanId:LoantoCustomer.LoanId,
+        })
+
+
+        // console.log(customer)
+        // onSuccess(customer)
+        onSuccess()
+    } catch (e) {
+        onError(e)
+        console.error("Error adding document: ", e);
+    }
+
+}
+
+/**
+ * This method add Cutomers from Firestore.
+ * @param {object} cutomer
+ * @param {function} onSuccess 
+ * @param {function} onError 
+ */
+ export const db_addCutomers = async (customer,onSuccess,onError) => {
+
+    try {
+        // collection ref
+        const docRef=doc(db,'customersTest/'+customer.CustomerId)
+        await setDoc(docRef,{
+            CustomerId: customer.CustomerId,
+            customer_name: customer.customer_name,
+            customer_phone: customer.customer_phone,
+            customer_address: customer.customer_address,
+            balance: 69687.54,
+            password: "password",
+        })
+
+
+        console.log(customer)
+        onSuccess(customer)
+    } catch (e) {
+        onError(e)
+        console.error("Error adding document: ", e);
+    }
+
+}
+
+/**
+ * This method add Cutomers from Firestore.
+ * @param {object} Loan
+ * @param {function} onSuccess 
+ * @param {function} onError 
+ */
+ export const db_addLoans = async (Loan,onSuccess,onError) => {
+
+    try {
+        // collection ref
+        const docRef=doc(db,'loanTest/'+Loan.LoanId)
+        await setDoc(docRef,{
+
+            LoanId: Loan.LoanId,
+            loan_amount: Loan.loan_amount
+
+        })
+
+
+        console.log(Loan)
+        onSuccess(Loan)
+    } catch (e) {
+        onError(e)
+        console.error("Error adding document: ", e);
+    }
+
+}
 
 export const db_getbook = async (bookid,onSuccess , onError) => {
 
