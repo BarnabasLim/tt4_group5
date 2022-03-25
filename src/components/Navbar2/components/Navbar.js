@@ -14,6 +14,7 @@ function Navbar(props) {
   const closeMobileMenu = () => setClick(false);
 
   const setShowModal=props.setShowModal;
+  const setShowModal2=props.setShowModal2;
   const onMouseEnter = () => {
     if (window.innerWidth < 960) {
       setDropdown(false);
@@ -94,7 +95,7 @@ function Navbar(props) {
               Sign Up Here
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link
               to='/random'
               className='nav-links'
@@ -102,13 +103,18 @@ function Navbar(props) {
             >
               Random
             </Link>
-          </li>
+          </li> */}
         </ul>
         <Button 
           setShowModal={setShowModal} 
         
         
         />
+        {/* <Button 
+          setShowModal2={setShowModal2} 
+        
+        
+        /> */}
       </nav>
     </>
   );

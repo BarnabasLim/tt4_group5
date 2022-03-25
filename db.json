@@ -1,5 +1,12 @@
+<<<<<<< HEAD
 {
   "customers": [
+=======
+
+{
+  "customers" : [
+
+>>>>>>> 8abe908c89bbbecf75d399bb16ed5b5763cb8cee
     {
       "id": 1,
       "customer_name": "Farrah Dobbie",
@@ -20,6 +27,7 @@
       "customer_phone": "6677805329",
       "customer_address": "1898 Michigan Road",
       "balance": 53826.01
+<<<<<<< HEAD
     },
     {
       "id": 4,
@@ -94,3 +102,29 @@
     }
   ]
 }
+=======
+    }
+  ],
+  "loans" : [
+    {
+        "id": 1,
+        "customerid": 2,
+        "loan_amount": 135532.99
+      },
+      {
+        "id": 2,
+        "customerid": 1,
+        "loan_amount": 34367.53
+      },
+      {
+        "id": 3,
+        "customerid": 8,
+        "loan_amount": 45086.74
+      }
+    ]
+
+}
+
+
+
+>>>>>>> 8abe908c89bbbecf75d399bb16ed5b5763cb8cee
