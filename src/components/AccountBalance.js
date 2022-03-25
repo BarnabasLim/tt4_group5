@@ -1,11 +1,11 @@
 import React from 'react'
 
-const AccountBalance = () => {
+const AccountBalance = ({customer}) => {
   return (
     <div>
       
         <div className="container-card">
-           <p>Account Balance</p>
+           <p>Account Balance: {customer.balance}</p>
         </div>
     </div>
   )
