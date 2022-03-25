@@ -50,7 +50,7 @@ const LoansPayment = () => {
 
   return (
     <div>
-      <h1>Loan Payment</h1>
+      <h1>Loans Payment</h1>
       <p> Current balance:$ {loan.currentBalance} </p>
       <p> Loan amount: $ {loan.loanAmt} </p>
       <p> Interest rate: 2.88% </p>
