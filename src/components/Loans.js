@@ -5,9 +5,9 @@ import Loan from './Loan'
 
 const Loans = ({loans}) => {
   return (
-    <div class='container-card'>
+    <div >
         {loans.map((loan)=>(
-            <Loan key={loan.Loanid} loan={loan}/>
+            <Loan key={loan.id} loan={loan}/>
         ))}
        
     </div>

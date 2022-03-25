@@ -1,10 +1,10 @@
 import React from 'react'
 
-const LoanAmount = () => {
+const LoanAmount = ({loanBalance}) => {
   return (
     <div>
        <div className="container-card">
-           <p>Current Loan Balance</p>
+           <p>Current Loan Balance: {loanBalance.balance}</p>
         </div>
     </div>
   )
