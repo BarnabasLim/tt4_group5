@@ -1,7 +1,12 @@
+<<<<<<< HEAD
+{
+  "customers": [
+=======
 
 {
   "customers" : [
 
+>>>>>>> 8abe908c89bbbecf75d399bb16ed5b5763cb8cee
     {
       "id": 1,
       "customer_name": "Farrah Dobbie",
@@ -22,6 +27,82 @@
       "customer_phone": "6677805329",
       "customer_address": "1898 Michigan Road",
       "balance": 53826.01
+<<<<<<< HEAD
+    },
+    {
+      "id": 4,
+      "customer_name": "Dido Vanezis",
+      "customer_phone": "2887691797",
+      "customer_address": "57689 Myrtle Park",
+      "balance": 30581.83
+    },
+    {
+      "id": 5,
+      "customer_name": "Annelise Aspland",
+      "customer_phone": "2096293966",
+      "customer_address": "3922 Cherokee Place",
+      "balance": 87026.91
+    },
+    {
+      "id": 6,
+      "customer_name": "Herminia Newby",
+      "customer_phone": "8111478402",
+      "customer_address": "19 Chive Center",
+      "balance": 5414.47
+    },
+    {
+      "id": 7,
+      "customer_name": "Lind Hanley",
+      "customer_phone": "7504959822",
+      "customer_address": "7534 Village Green Center",
+      "balance": 25921.26
+    },
+    {
+      "id": 8,
+      "customer_name": "Mimi Gilhooley",
+      "customer_phone": "6594140488",
+      "customer_address": "16033 Pond Avenue",
+      "balance": 62834.94
+    },
+    {
+      "id": 9,
+      "customer_name": "Ileana Parkes",
+      "customer_phone": "1281389203",
+      "customer_address": "095 Warner Hill",
+      "balance": 76939.31
+    },
+    {
+      "id": 10,
+      "customer_name": "Larissa Yeldham",
+      "customer_phone": "2812360584",
+      "customer_address": "220 Shopko Parkway",
+      "balance": 15790.59
+    }
+  ],
+  "loans": [
+    {
+      "CustomerLoanId": 1,
+      "CustomerId": 7,
+      "LoanId": 6
+    },
+    {
+      "CustomerLoanId": 2,
+      "CustomerId": 8,
+      "LoanId": 8
+    },
+    {
+      "CustomerLoanId": 3,
+      "CustomerId": 8,
+      "LoanId": 7
+    },
+    {
+      "CustomerLoanId": 4,
+      "CustomerId": 8,
+      "LoanId": 1
+    }
+  ]
+}
+=======
     }
   ],
   "loans" : [
@@ -46,3 +127,4 @@
 
 
 
+>>>>>>> 8abe908c89bbbecf75d399bb16ed5b5763cb8cee

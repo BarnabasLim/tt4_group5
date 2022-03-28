@@ -1,7 +1,6 @@
 .form {
   padding: 1rem;
 }
-
 .control {
   margin-bottom: 0.5rem;
 }
@@ -36,6 +35,9 @@
   border: 1px solid #77002e;
   border-radius: 4px;
   font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .actions button:hover,

@@ -22,10 +22,24 @@ module.exports = {
 
     getAccountBalByCustomerId:async function(req, res){
         let id = req.query.id;
-        console.log(id);
         let customer = await queries.getAccountBalByCustomerId(id);
+        
+        if(customer.length === 0){
+            res.json()
+        }
+        else{
+            let balance = customer[0].balance
+            res.json({
+                balance
+            })
+        }
+    },
+
+    getLoanById:async function(req, res){
+        let id = req.query.id;
+        let loan = await queries.getLoanById(id);
         res.json(
-            customer
+            loan
         )
     }
 }

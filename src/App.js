@@ -27,6 +27,7 @@ import * as v9_auth from './api/v9_auth';
 
 //Modal
 import  Modal  from './AppComponents/Modal';
+import  Modal2  from './AppComponents/Modal2';
 function App() {
 
   //Modal
@@ -34,7 +35,10 @@ function App() {
   const openModal = () => {
     setShowModal(prev => !prev);
   };
-
+  const [showModal2, setShowModal2] = useState(false);
+  const openModal2 = () => {
+    setShowModal2(prev => !prev);
+  };
   // const [tasks, setTasks]=useState([])
   // const [showAddTask, setShowAddTask]=useState(false)
 
@@ -69,7 +73,7 @@ function App() {
   const [user, setUser]=useState({});
   //Upon Mounting
   useEffect(()=>{
-    
+
     //Read
     // cutomer.forEach((customer)=>{
     //   v9_firestore.db_addCutomers(customer, ()=>{console.log("sucess")},(e)=>{console.log(e)})
@@ -296,9 +300,19 @@ const SignInAccount=(email,password)=>{
           setUser={setUser}
         
         />
+        <Modal2 showModal={showModal} setShowModal={setShowModal}
+          signedIn={signedIn}
+          setSignedIn={setSignedIn}
+          user={user}
+          setUser={setUser}
+        
+        />
         <Navbar setShowModal={()=>{
             console.log("clicked")
             openModal()}}
+            setShowModal2={()=>{
+              console.log("clicked")
+              openModal2()}}
         />
         <Routes>
           <Route path='/' element={
