@@ -71,7 +71,7 @@ function Navbar(props) {
           </li>
           <li className='nav-item'>
             <Link
-              to='/contact-us'
+              to='/loan-payment'
               className='nav-links'
               onClick={()=>{
                 closeMobileMenu()

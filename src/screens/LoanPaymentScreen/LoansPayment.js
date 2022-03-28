@@ -108,10 +108,14 @@ const LoansPayment = () => {
 
   return (
     <div className="payloan">
-      <h1>Loans Payment</h1>
+      <h1>Loans Payment 💲</h1>
+      <br/>
       <p> Current balance:$ {balance} </p>
+      <br/>
       <p> Loan amount: $ {loan_amt} </p>
+      <br/>
       <p> Interest rate: 2.88% </p>
+      <br/>
       <form onSubmit={ handleSubmit}>
         <label for="loanpayment">Enter the amount for loan payment : $</label> 
         <input
